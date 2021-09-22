@@ -24,7 +24,7 @@
          <span class="tooltip">Productos</span>
       </li>
       <li>
-       <a href="marcas.php">
+       <a href="#">
             <i class='bx bxl-apple'></i>
             <span class="links_name">Marcas</span>
        </a>
@@ -49,53 +49,21 @@
         <!-- Font Awsome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-      <div class="text">Formulario Productos</div>
+      <div class="text">Formulario Marcas</div>
       <div class="container ">
             <div class="row">
                 <div class="col-md-12">
                     <div class="well well-sm">
-                        <form class="form-horizontal" action="Productos/insertarProductos.php" method="post">
+                        <form class="form-horizontal" action="Marcas/insertarMarcas.php" method="post">
                             <fieldset>
                                 <div class="form-group">
                                     <div class="col-md-8">
-                                        <label for="lbl_producto" class="form-label"><b>Producto</b></label>
-                                        <input id="txt_producto" name="txt_producto" type="text" placeholder="Producto: producto" class="form-control">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <label for="lbl_marca" class="form-marca"><b>Marca</b></label>
-                                        <select class="form-select" name="drop_marca" id="drop_marca">
-                                        <option value=0>------Marca--------</option>
-                                            <?php
-                                                include("conexion.php");
-                                                $db_conexion=mysqli_connect($db_host,$db_usr,$db_pass,$db_name,$db_puerto);
-                                                $db_conexion -> real_query ("SELECT idmarca as id,marca FROM marcas;");
-                                                $resultado = $db_conexion -> use_result();
-                                                while ($fila = $resultado ->fetch_assoc()){
-                                                echo "<option value=". $fila['id'].">". $fila['marca']."</option>";
-                                                }
-                                                $db_conexion -> close();
-                                            ?>
-                                        </select>
-                                        </div>
-                                    <div class="col-md-8">
-                                        <label for="lbl_descripcion" class="form-label"><b>Descripción</b></label>
-                                        <textarea class="form-control" id="txt_descripcion" name="txt_descripcion" placeholder="Ingrese la descripcion del producto." rows="7"></textarea>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <label for="lbl_precio_costo" class="form-label"><b>Precio Costo</b></label>
-                                        <input id="txt_precio_costo" name="txt_precio_costo" type="number" placeholder="" class="form-control">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <label for="lbl_precio_venta" class="form-label"><b>Precio Venta</b></label>
-                                        <input id="txt_precio_venta" name="txt_precio_venta" type="number" placeholder="" class="form-control">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <label for="lbl_existencia" class="form-label"><b>Existencia</b></label>
-                                        <input id="txt_existencia" name="txt_existencia" type="number" placeholder="Existencia: 4" class="form-control">
+                                        <label for="lbl_marca" class="form-label"><b>Marca</b></label>
+                                        <input id="txt_marca" name="txt_marca" type="text" placeholder="Marca: Qwerty" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <br>
-                                        <input type="submit" name="btn_agregar_producto" id="btn_agregar_producto" class="btn btn-success" value="Agregar">
+                                        <input type="submit" name="btn_agregar_marca" id="btn_agregar_marca" class="btn btn-success" value="Agregar">
                                         
                                     </div>
                                 </div>
@@ -104,12 +72,7 @@
                         <table class="table table-striped table-responsive">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>Producto</th>
                                     <th>Marca</th>
-                                    <th>Descripción</th>
-                                    <th>Precio Costo</th>
-                                    <th>Precio Venta</th>
-                                    <th>Existencia</th>
                                     <th>Acciones</th>
                                 </tr>
                                 </thead>
@@ -118,17 +81,11 @@
                                         <?php
                                             include("conexion.php");
                                             $db_conexion=mysqli_connect($db_host,$db_usr,$db_pass,$db_name,$db_puerto);
-                                            $db_conexion -> real_query ("SELECT p.idProducto as id,p.producto,m.marca,p.Descripcion,p.precio_costo,p.precio_venta,p.existencia
-                                            FROM productos as p inner join marcas as m on p.idmarca = m.idmarca;");
+                                            $db_conexion -> real_query ("SELECT idmarca as id,marca FROM marcas;");
                                             $resultado = $db_conexion -> use_result();
                                             while ($fila = $resultado ->fetch_assoc()){
                                                 echo "<tr data-id=" . $fila['id'].">";
-                                                    echo "<td>". $fila['producto']."</td>";
                                                     echo "<td>". $fila['marca']."</td>";
-                                                    echo "<td>". $fila['Descripcion']."</td>";
-                                                    echo "<td>". $fila['precio_costo']."</td>";
-                                                    echo "<td>". $fila['precio_venta']."</td>";
-                                                    echo "<td>". $fila['existencia']."</td>";
                                                     echo "<td>"."<a href=".'"eliminar.php?id='. $fila['id'].'" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></a><a href="modificar.php?id=' .$fila['id'].'" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                 
                                                 echo "</tr>";
