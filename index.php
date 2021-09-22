@@ -33,7 +33,7 @@
 
      <li class="profile">
          <div class="profile-details">
-           <img src="profile.jpg" alt="profileImg">
+           <img src="p.jpg" alt="profileImg">
            <div class="name_job">
              <div class="name">Walter Vásquez</div>
              <div class="job">1290-18-18389</div>
