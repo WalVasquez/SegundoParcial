@@ -86,7 +86,7 @@
                                             while ($fila = $resultado ->fetch_assoc()){
                                                 echo "<tr data-id=" . $fila['id'].">";
                                                     echo "<td>". $fila['marca']."</td>";
-                                                    echo "<td>"."<a href=".'"eliminar.php?id='. $fila['id'].'" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></a><a href="Marcas/modificar.php?id=' .$fila['id'].'" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
+                                                    echo "<td>"."<a href=".'"Marcas/eliminar.php?id='. $fila['id'].'" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></a><a href="Marcas/modificar.php?id=' .$fila['id'].'" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                 
                                                 echo "</tr>";
                 

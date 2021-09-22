@@ -129,7 +129,7 @@
                                                     echo "<td>". $fila['precio_costo']."</td>";
                                                     echo "<td>". $fila['precio_venta']."</td>";
                                                     echo "<td>". $fila['existencia']."</td>";
-                                                    echo "<td>"."<a href=".'"eliminar.php?id='. $fila['id'].'" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></a><a href="Productos/modificar.php?id=' .$fila['id'].'" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
+                                                    echo "<td>"."<a href=".'"Productos/eliminar.php?id='. $fila['id'].'" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></a><a href="Productos/modificar.php?id=' .$fila['id'].'" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                 
                                                 echo "</tr>";
                 
