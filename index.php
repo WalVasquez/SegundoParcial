@@ -79,7 +79,7 @@
                                         </div>
                                     <div class="col-md-8">
                                         <label for="lbl_descripcion" class="form-label"><b>Descripción</b></label>
-                                        <textarea class="form-control" id="txt_descripcion" name="txt_descripcion" placeholder="Ingrese la descripcion del producto." rows="7"></textarea>
+                                        <input class="form-control" id="txt_descripcion" name="txt_descripcion" placeholder="Ingrese la descripcion del producto." ></input>
                                     </div>
                                     <div class="col-md-8">
                                         <label for="lbl_precio_costo" class="form-label"><b>Precio Costo</b></label>
@@ -129,7 +129,7 @@
                                                     echo "<td>". $fila['precio_costo']."</td>";
                                                     echo "<td>". $fila['precio_venta']."</td>";
                                                     echo "<td>". $fila['existencia']."</td>";
-                                                    echo "<td>"."<a href=".'"eliminar.php?id='. $fila['id'].'" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></a><a href="modificar.php?id=' .$fila['id'].'" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
+                                                    echo "<td>"."<a href=".'"eliminar.php?id='. $fila['id'].'" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></a><a href="Productos/modificar.php?id=' .$fila['id'].'" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                 
                                                 echo "</tr>";
                 

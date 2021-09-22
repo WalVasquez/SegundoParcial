@@ -81,12 +81,12 @@
                                         <?php
                                             include("conexion.php");
                                             $db_conexion=mysqli_connect($db_host,$db_usr,$db_pass,$db_name,$db_puerto);
-                                            $db_conexion -> real_query ("SELECT idmarca as id,marca FROM marcas;");
+                                            $db_conexion -> real_query ("SELECT idMarca as id,marca FROM marcas;");
                                             $resultado = $db_conexion -> use_result();
                                             while ($fila = $resultado ->fetch_assoc()){
                                                 echo "<tr data-id=" . $fila['id'].">";
                                                     echo "<td>". $fila['marca']."</td>";
-                                                    echo "<td>"."<a href=".'"eliminar.php?id='. $fila['id'].'" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></a><a href="modificar.php?id=' .$fila['id'].'" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
+                                                    echo "<td>"."<a href=".'"eliminar.php?id='. $fila['id'].'" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></a><a href="Marcas/modificar.php?id=' .$fila['id'].'" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                 
                                                 echo "</tr>";
                 
